@@ -1,0 +1,47 @@
+Home-brew 安装
+
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+
+选择科大源    source /Users/wutianxing/.zprofile
+
+
+
+
+
+
+
+Mac解释器的切换
+
+命令“more /etc/shells”查看shell有多少个；
+然后输入切换命令:“chsh -s /bin/zsh”；
+命令：“echo $SHELL”显示当前使用的解释器
+1、我们都知道mac有默认bash工具，在下载zsh后，把一切都配置好后，输入切换命令：
+chsh - s /bin/zsh ,总是提示 chsh: no changes made错误。那我我们尝试用sudo chsh -s /bin/zsh 在试一次。如果还是不行，就不用再弄了，直接用下面的方法吧！
+
+提示chsh:no changes made 解决办法：终端输入：
+
+dscl . -read /Users/$USER/ UserShell
+
+exec su - $USER
+
+然后在输入密码即可。完美解决
+--------------------------------------------------------------------------
+
+修改文件权限：chmod -R a+r+w *
+其中:
+
+u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。
+'+' 表示增加权限、'-' 表示取消权限、'=' 表示唯一设定权限。
+r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。
+其他参数说明：
+
+-c : 若该文件权限确实已经更改，才显示其更改动作
+-f : 若该文件权限无法被更改也不要显示错误讯息
+-v : 显示权限变更的详细资料
+-R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)
+--help : 显示辅助说明
+--version : 显示版本
+
+
+
+

@@ -1,0 +1,2 @@
+sudo mkdir -p /var/lib/docker/volumes/etcd_etcd-data/_data
+sudo chown -R 1001:1001 /var/lib/docker/volumes/etcd_etcd-data
