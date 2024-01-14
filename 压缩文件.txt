@@ -1,0 +1,12 @@
+gzip  ./币安02_1231.csv/*
+gzip  ./币安04_1231.csv/*
+gzip  ./币安05_1231.csv/*
+gzip  ./币安01_1229.csv/*
+gzip  ./币安01_1231.csv/*
+gzip  ./币安02_1229.csv/*
+gzip  ./币安03_1229.csv/*
+gzip  ./币安03_1231.csv/*
+gzip  ./币安04_1229.csv/*
+gzip  ./币安05_1229.csv/*
+gzip  ./币安06_1231.csv/*
+gzip  ./币安07_1231.csv/*

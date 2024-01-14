@@ -17,25 +17,3 @@ ssh -p 10570 qq@2.tcp.nas.cpolar.cn
 
 cd /hdd_raid5/qq_data_multi
 
-gzip *
-
-
-
-tar -xf 币安01_1229.csv.tar.gz -C 币安01_1229.csv    //todo 可能有问题
-tar -xf 币安01_1231.csv.tar.gz -C 币安01_1231.csv
-tar -xf  币安01_csvgz_1231.tar.gz -C 币安01_csvgz_1231
-tar -xf 币安02_1229.csv.tar.gz -C 币安02_1229.csv
-tar -xf  币安02_1231.csv.tar.gz -C 币安02_1231.csv               //todo  需要压缩
-tar -xf  币安02_csvgz_1231.tar.gz -C 币安02_csvgz_1231
-tar -xf 币安03_1229.csv.tar.gz -C 币安03_1229.csv
-tar -xf 币安03_1231.csv.tar.gz -C 币安03_1231.csv
-tar -xf  币安03_csvgz_1231.tar.gz  -C 币安03_csvgz_1231
-tar -xf 币安04_1229.csv.tar.gz -C 币安04_1229.csv
-tar -xf 币安04_1231.csv.tar.gz -C 币安04_1231.csv               //todo  需要压缩
-tar -xf 币安04_csvgz_1231.tar.gz -C 币安04_csvgz_1231
-tar -xf 币安05_1229.csv.tar.gz -C 币安05_1229.csv
-tar -xf 币安05_1231.csv.tar.gz -C 币安05_1231.csv               //todo  需要压缩
-tar -xf 币安05_csvgz_1231.tar.gz -C 币安05_csvgz_1231
-tar -xf 币安06_1231.csv.tar.gz -C 币安06_1231.csv
-tar -xf 币安06_csvgz_1231.tar.gz -C 币安06_csvgz_1231
-tar -xf 币安07_1231.csv.tar.gz -C 币安07_1231.csv                 //todo 多级目录

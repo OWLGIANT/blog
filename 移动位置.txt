@@ -1,9 +1,20 @@
-币安01_1229.csv
-币安01_1231.csv
-币安02_1229.csv
-币安03_1229.csv
-币安03_1231.csv
-币安04_1229.csv
-币安05_1229.csv
-币安06_1231.csv
-币安07_1231.csv
+mv /hdd_raid5/qq_data_multi/币安01_1229.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安01_1229.csv
+rm -rf 币安01_1229.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安02_1229.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安02_1229.csv
+rm -rf 币安02_1229.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安03_1229.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安03_1229.csv
+rm -rf 币安03_1229.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安04_1229.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安04_1229.csv
+rm -rf 币安04_1229.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安05_1229.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安05_1229.csv
+rm -rf 币安05_1229.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安06_1231.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安06_1231.csv
+rm -rf 币安06_1231.csv/root
+
+mv /hdd_raid5/qq_data_multi/币安07_1231.csv/root/supervisor/*    /hdd_raid5/qq_data_multi/币安07_1231.csv
+rm -rf 币安07_1231.csv/root
