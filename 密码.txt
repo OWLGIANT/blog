@@ -32,6 +32,7 @@ cd /hdd_raid5/qq_data_multi
 ssh -p 35420 root@18.180.36.103
 e3nNpBcsNNwx6BLk7jpk
 /root/beast   可执行文件路径
+supervisorctl stop  beastupload
 supervisorctl start beastupload
 
 
