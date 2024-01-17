@@ -1,0 +1,73 @@
+[AWS]
+账号：thousandquant@163.com
+密码：cairenming340504!!!
+
+//====================================================================================
+[Jenkins]
+账号： root
+密码：beastadmin123
+
+//====================================================================================
+[自己服务器地址]
+ssh root@114.55.134.26
+
+//====================================================================================
+[上海内网服务器]
+ssh -p 10570 qq@2.tcp.nas.cpolar.cn
+账号：qq
+密码：qqlh123456
+
+cd /hdd_raid5/qq_data_multi
+
+
+//====================================================================================
+
+[sand bestserver服务器]
+141.164.56.89	root	3GysGXCR9q3A6YHr
+
+
+//====================================================================================
+[bestdeploy 服务器地址]
+
+ssh -p 35420 root@18.180.36.103
+e3nNpBcsNNwx6BLk7jpk
+/root/beast   可执行文件路径
+supervisorctl stop  beastupload
+supervisorctl start beastupload
+
+
+
+[jumpServer]
+admin
+uKcC4215033...!!!
+
+
+
+行情采集03     43.207.121.123
+行情采集02	 13.230.145.27
+行情采集01	 54.248.21.38
+行情采集	     13.113.161.97
+
+
+gzip: binance_usdt_swap-okx_usdt_swap-bybit_usdt_swap@sol_usdt-sol_usdt-sol_usdt@1705473369.csv: file size changed while zipping
+gzip: binance_usdt_swap@algo_usdt@1705473340.csv: file size changed while zipping
+gzip: binance_usdt_swap@atom_usdt@1705473338.csv: file size changed while zipping
+gzip: binance_usdt_swap@bat_usdt@1705473338.csv: file size changed while zipping
+gzip: binance_usdt_swap@bnb_usdt@1705473338.csv: file size changed while zipping
+gzip: binance_usdt_swap@comp_usdt@1705473339.csv: file size changed while zipping
+gzip: binance_usdt_swap@iost_usdt@1705473340.csv: file size changed while zipping
+gzip: binance_usdt_swap@knc_usdt@1705473336.csv: file size changed while zipping
+gzip: binance_usdt_swap@neo_usdt@1705473339.csv: file size changed while zipping
+gzip: binance_usdt_swap@omg_usdt@1705473340.csv: file size changed while zipping
+gzip: binance_usdt_swap@ont_usdt@1705473338.csv: file size changed while zipping
+gzip: binance_usdt_swap@qtum_usdt@1705473337.csv: file size changed while zipping
+gzip: binance_usdt_swap@vet_usdt@1705473338.csv: file size changed while zipping
+gzip: binance_usdt_swap@zil_usdt@1705473340.csv: file size changed while zipping
+gzip: binance_usdt_swap@zrx_usdt@1705473339.csv: file size changed while zipping
+gzip: okx_usdt_swap@ace_usdt@1705473369.csv: file size changed while zipping
+gzip: okx_usdt_swap@dot_usdt@1705473368.csv: file size changed while zipping
+gzip: okx_usdt_swap@ordi_usdt@1705473370.csv: file size changed while zipping
+gzip: okx_usdt_swap@sats_usdt@1705473369.csv: file size changed while zipping
+gzip: okx_usdt_swap@sol_usdt@1705473370.csv: file size changed while zipping
+gzip: okx_usdt_swap@wld_usdt@1705473370.csv: file size changed while zipping
+gzip: okx_usdt_swap@xrp_usdt@1705473369.csv: file size changed while zipping
