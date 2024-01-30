@@ -53,8 +53,18 @@ uKcC4215033...!!!
 
 
 
-54.249.77.12
-13.231.89.93
-13.112.221.157
-13.230.59.200
 
+
+
+
+
+13.112.221.157
+
+13.231.89.93
+
+13.230.59.200
+debugStraMkd_backup
+
+scp  debugStraMkd  root@13.112.221.157:/root/supervisor/debugStraMkd_backup
+
+54.249.77.12
