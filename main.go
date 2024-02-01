@@ -1,12 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"blog/utils"
+	"fmt"
+)
 
 func main() {
-
-	eNameMap := make(map[string][]string)
-	for i := 0; i < 10; i++ {
-		eNameMap["www"] = append(eNameMap["www"], "eeeeeeeeeeee")
+	outPut, err := utils.SSHCmd("114.55.134.26", "cd ~/CompressFiles;./test.sh")
+	if err != nil {
+		println(err)
 	}
-	fmt.Println(eNameMap["www"])
+	fmt.Println("------114.55.134.26----------", outPut)
 }
