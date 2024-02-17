@@ -1,0 +1,7 @@
+docker volume inspect ls-cnf
+
+ docker exec -it etcd sh
+
+docker run -itd --name redis-test -p 6379:6379 redis --requirepass 123456
+
+docker run -itd --name mysql3   -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 mysql
