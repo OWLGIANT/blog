@@ -22,7 +22,6 @@ ssh -p 10570 uploader@2.tcp.nas.cpolar.cn
 账号：uploader
 密码：qqlh123456
 qq
-
 cd /hdd_raid5/qq_data_multi
 
 scp  -P 10570  -r  行情采集  qq@2.tcp.nas.cpolar.cn:/hdd_raid5/qq_depth_data   #批量复制文件到指定位置
@@ -33,6 +32,9 @@ ssh的密码改了
 专用域名 2.tcp.nas.cpolar.cn:10570
 用户名 uploader
 密码 j2fRVxL7CW%SZx
+
+
+sftp -P 10570 uploader@2.tcp.nas.cpolar.cn
 
 //====================================================================================
 
