@@ -18,6 +18,9 @@ ssh root@114.55.134.26
 
 //====================================================================================
 [上海内网服务器]
+
+中间是ups 左边是256c 右边透明侧板的是3900x
+
 ssh -p 10570 uploader@2.tcp.nas.cpolar.cn
 账号：uploader
 密码：qqlh123456
@@ -60,22 +63,11 @@ uKcC4215033...!!!
 
 
 
+[gitlab]
+1325384144@qq.com
+XgXReyWz2L3L2RK
 
+[ChatGPT]
+网站:http://141.164.56.89:3000/#/chat
+密码:GjBG2z3nfuHBcJXYtPS5
 
-
-
-
-
-
-
-
-13.112.221.157
-
-13.231.89.93
-
-13.230.59.200
-debugStraMkd_backup
-
-scp  debugStraMkd  root@13.112.221.157:/root/supervisor/debugStraMkd_backup
-
-54.249.77.12
