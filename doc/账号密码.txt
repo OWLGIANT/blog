@@ -71,3 +71,9 @@ XgXReyWz2L3L2RK
 网站:http://141.164.56.89:3000/#/chat
 密码:GjBG2z3nfuHBcJXYtPS5
 
+
+
+
+scp root@43.206.223.232:/root/supervisor/akdMem.pprof  /root/
+scp akdMem.pprof root@114.55.134.26:/root/
+scp root@114.55.134.26:/root/akdMem.pprof C:\Users\Administrator
