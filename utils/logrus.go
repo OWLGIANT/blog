@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	host  = "114.55.134.26"
-	Index = fmt.Sprintf("public_server_%s", host)
+	host  = "18.180.36.103"
+	Index = fmt.Sprintf("beastdeploy_%s", host)
 )
 
 type CHook struct{}
@@ -24,19 +24,8 @@ func (hook CHook) Fire(entry *logrus.Entry) error {
 	if err != nil {
 		fmt.Println("Fire entry Error :", err)
 	}
-	response, err := HTTPInsert(http.MethodPost, fmt.Sprintf("http://%s:8080/logrus/insert", host), log)
-	if err != nil {
-		fmt.Println("HTTPRequest Error :", err)
-	}
-	//var body struct {
-	//	Code int                     `json:"code"`
-	//	Msg  string                  `json:"msg"`
-	//}
-	//if err = json.Unmarshal(response, &body); err != nil {
-	//	logrus.Error(err)
-	//}
 
-	fmt.Println("========response==========", string(response))
+	go LogInsert(http.MethodPost, "http://57.180.139.206/logrus/insert", log)
 
 	return nil
 }
