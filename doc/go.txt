@@ -1,0 +1,16 @@
+
+//======benchmark压力测试======================
+
+go tool pprof   <<source 文件地址>>
+
+top 《num》 //消耗资源前十的
+
+list  <函数方法名>  //列出代码位置
+//====================pprof===========================
+
+//===============goctl======================================
+goctl api go -api gateway.api -dir .
+goctl rpc protoc xx.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+goctl rpc protoc user.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+
+

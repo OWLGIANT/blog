@@ -53,9 +53,6 @@ e3nNpBcsNNwx6BLk7jpk
 supervisorctl stop  beastupload
 supervisorctl start beastupload
 
-sudo chmod -R 777 Dino_ip
-
-
 
 [jumpServer]
 admin
@@ -76,9 +73,3 @@ XgXReyWz2L3L2RK
 /var/log/beast_deploy_stderr.log里面
 
 
-scp root@43.206.223.232:/root/supervisor/WatchMem3625607.pprof  /root/
-scp WatchMem3625607.pprof root@114.55.134.26:/root/
-scp root@114.55.134.26:/root/WatchMem3625607.pprof C:\Users\Administrator
-scp  beastStraWatch  root@43.206.223.232:/root/supervisor/beastStraWatch
-
-80aaf308-55f0-491a-aedf-dda3d76535ff

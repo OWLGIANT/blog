@@ -1,0 +1,67 @@
+----------------------tcping-----------
+方法二：brew 镜像安装脚本（亲测最快速最有效）
+
+/usr/bin/ruby -e "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)"
+
+Brew install  tcping
+
+
+
+  很多时候要测试端口，ping命令虽好但不能测试端口 ping 基于ICMP协议是属于ip层协议，通信不需要端口所以无法测试 tcp udp 运输层的端口，出于网络安全等因素，大部分网络环境以及云环境可能都会禁止 ICMP 协议，
+
+tcping测量在其自身与远程主机之间执行TCP 3种握手（SYN，SYN/ACK，ACK）所需的时间。
+不包括传出最终ACK的传输时间，仅包括将其丢弃所需的（最短）时间线缆在近端。这允许（SYN，SYN/ACK）的请求，响应时间近似于相当于ICMP。
+tcpping、tcping、psping、hping、paping
+
+-4 建议使用IPv4
+-6 优先使用IPv6
+-t 连续ping，直到通过control-c停止
+-n count
+        发送ping，然后停止。默认值4。
+-i 间隔
+        在两次ping之间等待_interval_秒。默认值1.允许使用小数。
+-w 间隔
+        等待_interval_秒以获取响应。默认值2。允许使用小数。
+-d 在每条回显中显示日期和时间
+-f 除了建立连接外，还强制发送至少一个字节。
+-g 计数
+        在_count_次ping失败后放弃。
+-b 类型
+        启用蜂鸣声。
+        “ -b 1”将“向下”发出蜂鸣声。如果主机启动了，但现在没有启动，则发出哔声。
+        “ -b 2”将“响起”哔声。如果主机掉线了，但现在却掉线了，请发出哔声。
+        “ -b 3”将在“更改”时发出蜂鸣声。如果主机是一种方式，但现在是另一种方式，则发出哔声。
+        “ -b 4”将“总是”发出哔声。
+-c 仅在更改的状态下显示输出
+-r 计数
+        每次计数时，我们都会为主机执行新的DNS查找，以防主机更改。
+-s 成功后立即退出。
+-v 打印版本并退出。
+-j 计算抖动。抖动定义为上次响应时间与历史平均值之间的差。
+-j s深度
+        与-j一样计算抖动，但指定了可选的_depth_参数。如果指定_depth_ tcping将
+        使用先前的_depth_值来计算滚动平均值。
+--tee _文件名_
+        输出重复到指定的_filename_。Windows仍不能依赖于具有有用的命令行
+        环境。* nix伙计们，不要嘲笑我。
+- append
+        使用--tee时，追加而不是覆盖输出文件。
+- file
+        将“目标”选项视为文件名。该文件成为目的地的来源，并在
+        逐行 某些选项在此模式下不起作用，并且不会保留统计信息。
+--destination
+        DNS名称，IP地址或（在“ http”模式下）URL。
+        不要在“ http”模式下指定协议（“ http：//”）。也不要通过“：port”语法指定服务器端口。
+        例如：“ tcping http://www.elifulkerson.com:8080/index.html”将失败
+
+        请使用以下样式：“ tcping www.elifulkerson.com/index.html 8080”。
+
+
+
+
+
+
+ ~ tcping   47.100.207.62  22
+
+
+

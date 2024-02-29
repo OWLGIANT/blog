@@ -1,0 +1,67 @@
+---------------------------------------dig----------------------------------
+dig命令是常用的域名查询工具，可以用来测试域名系统工作是否正常
+
+  dig   47.100.207.62			dig(选项)(参数)
+
+1 @<服务器地址>：指定进行域名解析的域名服务器；
+2 -b<ip地址>：当主机具有多个IP地址，指定使用本机的哪个IP地址向域名服务器发送域名查询请求；
+3 -f<文件名称>：指定dig以批处理的方式运行，指定的文件中保存着需要批处理查询的DNS任务信息；
+4 -P：指定域名服务器所使用端口号；
+5 -t<类型>：指定要查询的DNS数据类型；
+6 -x<IP地址>：执行逆向域名查询；
+7 -4：使用IPv4；
+8 -6：使用IPv6；
+9 -h：显示指令帮助信息。
+
+
+
+
+查找yahoo.com的A记录：（此处一定是域而不是主机，如我公司为xinpindao.com)
+dig yahoo.com A +noall +answer
+
+
+查找yahoo.com MX记录的列表：
+dig yahoo.com MX +noall +answer
+
+
+查找yahoo.com的权威DNS：
+dig yahoo.com NS +noall +answer
+
+
+查询上面所有的记录：
+dig yahoo.com ANY +noall +answer
+
+
+ 在现在这种IPv4和IPV6混用的情况下，你也可以使用AAAA的选项查询主机的IPv6 AAAA记录：
+dig www.isc.org AAAA +short
+
+
+当我们需要一个快速回答时，+short选项是你最好的朋友:
+dig www.isc.org +short
+
+
+
+
+获得一个不是十分精简的答案？
+获得没有附加信息的详细答案的方法是使用+noall选项，这样就只保留你想要的输出。
+下面是只有一个答案的精简查询，最后包含所有的配置信息，包括TTL数据，格式化的BIND配置信息。
+$ dig fsf.org mx +short
+$ dig +nocmd fsf.org mx +noall +answer
+
+
+
+获得一个详细答案？
+$ dig +nocmd ogi.edu any +multiline +noall +answer
+
+
+查找PTR记录？
+可以用 -x的选项查找IP地址的主机名。
+$ dig -x 204.152.184.167 +short
+
+
+跟踪dig的查询路径
+你可能是个traceroute的狂热爱好者，经常喜欢查看如何从点A连接点B。那你可以使用dig +trace选项做类似
+的事。
+dig gentoo.de +trace
+你可以在dig输出的头部分看到根DNS，然后找到负责解析所有*.de的DNS，最后找到gentoo.de的域名IP。
+

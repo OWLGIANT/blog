@@ -4,11 +4,11 @@ package utils
 //import (
 //	"bytes"
 //	"github.com/sirupsen/logrus"
-//	"golang.org/x/crypto/ssh"
+//	"golang.org/x/crypto/ssh.txt"
 //	"strings"
 //)
 //
-//var sshConfig *ssh.ClientConfig // ssh连接配置
+//var sshConfig *ssh.txt.ClientConfig // ssh连接配置
 //func init() {
 //	var err error
 //	sshConfig, err = newSshConfig() //ssh连接初始化
@@ -19,29 +19,29 @@ package utils
 //}
 //
 //// 堡垒机  用的是堡垒机上的 ssh公钥 配置
-//func newSshConfig() (conf *ssh.ClientConfig, err error) {
-//	//privateKeyBytes, err := ioutil.ReadFile(`/root/.ssh/id_rsa`)
+//func newSshConfig() (conf *ssh.txt.ClientConfig, err error) {
+//	//privateKeyBytes, err := ioutil.ReadFile(`/root/.ssh.txt/id_rsa`)
 //	//if err != nil {
 //	//	logrus.Error("Failed to open id_rsa:", err)
 //	//	return
 //	//}
-//	//privateKey, err := ssh.ParsePrivateKey(privateKeyBytes)
+//	//privateKey, err := ssh.txt.ParsePrivateKey(privateKeyBytes)
 //	//if err != nil {
 //	//	logrus.Error("Failed to Parse private key: ", err)
 //	//	return
 //	//}
-//	conf = &ssh.ClientConfig{
+//	conf = &ssh.txt.ClientConfig{
 //		User: "root", // 你的SSH用户名
-//		Auth: []ssh.AuthMethod{
-//			ssh.Password("1325384144@qq"),
+//		Auth: []ssh.txt.AuthMethod{
+//			ssh.txt.Password("1325384144@qq"),
 //		},
-//		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
+//		HostKeyCallback: ssh.txt.InsecureIgnoreHostKey(),
 //	}
 //	return
 //}
 //
 //func SSHCmd(ip, cmd string) (outPut string, err error) {
-//	client, err := ssh.Dial("tcp", ip+":22", sshConfig)
+//	client, err := ssh.txt.Dial("tcp", ip+":22", sshConfig)
 //	if err != nil {
 //		return
 //	}

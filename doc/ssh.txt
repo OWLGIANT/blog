@@ -1,0 +1,8 @@
+ssh -i  /Users/wutianxing/Desktop/aws.pem  ec2-user@ec2-13-212-121-80.ap-southeast-1.compute.amazonaws.com
+
+
+scp root@43.206.223.232:/root/supervisor/WatchMem3625607.pprof  /root/
+scp WatchMem3625607.pprof root@114.55.134.26:/root/
+scp root@114.55.134.26:/root/WatchMem3625607.pprof C:\Users\Administrator
+scp  beastStraWatch  root@43.206.223.232:/root/supervisor/beastStraWatch
+

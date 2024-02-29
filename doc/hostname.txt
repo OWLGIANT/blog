@@ -1,0 +1,18 @@
+-------------------------四种方法更改hostname---------------------------
+
+假设把hostname改为TEST
+
+     1.永久性更改：vim /etc/sysconfig/network下的HOSTNAME后，把HOSTNAME值改成TEST。修改完之后需要reboot重启服务器永久生效。
+
+     2.临时性更改  echo TEST >/proc/sys/kernel/hostname
+
+     3.临时性更改 sysctl kernel.hostname=DB-Server
+
+     4.临时性更改  hostname TEST
+
+     注意：如果/etc/sysconfig/network下配置hostname为localhost或者localhost.localdomain时，将会使用接口/etc/hosts文件中配置的本机IP地址对应的域名来重新设置系统的hostname。这个是在/etc/rc.d/rc.sysinit中进行的一个逻辑判断决定的。
+
+
+
+
+

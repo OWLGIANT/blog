@@ -1,0 +1,40 @@
+
+------------------------- curl-----------------------------------------------------------------------
+　curl是一个非常实用的、用来与服务器之间传输数据的工具；支持的协议包括 (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP)，curl设计为无用户交互下完成工作；
+
+
+Curl https://www.baidu.com   -o   1.txt.   下载至1.txt.
+
+
+Curl https://www.baidu.com   -s -H(请求头)“A:b”	-X  Post -d "age=22"
+
+
+Curl http://localhost:887 name=kk -s -H "content-type:application/json" -X   Post -d"{\"age\:24}"
+
+
+-F参数用来向服务器上传二进制文件。
+curl -F 'file=@photo.png' https://google.com/profile
+
+上面命令会给 HTTP 请求加上标头Content-Type: multipart/form-data，然后将文件photo.png作为file字段上传。
+curl -d '@data.txt' https://google.com/login
+上面命令读取data.txt文件的内容，作为数据体向服务器发送。
+
+
+ curl -d '{"login": "emma", "pass": "123"}' -H 'Content-Type: application/json' https://google.com/login
+上面命令添加 HTTP 请求的标头是Content-Type: application/json，然后用-d参数发送 JSON 数据。
+
+
+curl  http://localhost:8080/a\?A\=a\&C\=c\&D\=d                                                              {GET方法}
+
+curl -d "username=123&password=456&age=18" http://localhost:8080/form                                      {Post:from表单方法}
+
+curl -H "Content-Type: application/json" -X POST  --data '{"userID":10001,"wwttxx2":1000}' http://localhost:8080/json      {Post:json方法}
+curl http://47.100.207.62:8080/test/a\=1/b\=1  (python里get方法)
+
+
+
+curl -k  https://localhost:8080/get\?age\=33          (-k不验证 证书的合法性)
+
+
+
+

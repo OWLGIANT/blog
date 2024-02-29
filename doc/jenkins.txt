@@ -1,0 +1,50 @@
+ ---------------------jenkins--------------安装---------------------------
+  docker pull jenkins/jenkins:latest   //拉取jenkins源
+
+  http://mirror.esuni.jp/jenkins/updates/update-center.json    //插件管理  高级中 修改成  清华源
+
+
+   mkdir -p /usr/local/docker/jenkins_docker
+    cd /usr/local/docker/jenkins_docker/
+    vi docker-compose.yml
+
+
+替换jenkins的版本
+    2. 进入容器更新Jenkins版本
+    首先，进入容器，记得一定用root用户
+
+    docker exec -it -u root [container_id] /bin/bash
+
+    jenkins@4e3e91f7c0d0:/$ ps -ef | grep java
+    jenkins      6     1  7 05:06 ?        00:01:32 java -jar /usr/share/jenkins/jenkins.war
+    jenkins    239   218  0 05:26 pts/0    00:00:00 grep java
+    这里就能发现，其实容器里面就是使用java启动了jenkins.war包，那么我们升级/usr/share/jenkins/jenkins.war就可以了。
+    3. 容器里面下载最新的war包
+    进入官网查看下载jenkins download
+    通过F12发现下载最新版本链接就是：http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+    所有的war包地址：https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/
+    然后可以直接在容器内通过wget命令下载jenkins.war包
+    root@4e3e91f7c0d0:/# cd /usr/share/jenkins/
+    root@4e3e91f7c0d0:/usr/share/jenkins# ls
+    jenkins.war  ref
+    // 备份原war包
+    root@4e3e91f7c0d0:/usr/share/jenkins# cp jenkins.war jenkins.war.2.60.3.bak
+    root@4e3e91f7c0d0:/usr/share/jenkins# ls
+    jenkins.war  jenkins.war.2.60.3.bak  ref
+    // 新建文件夹，存储新war包
+    root@4e3e91f7c0d0:/usr/share/jenkins# mkdir other-version
+    root@4e3e91f7c0d0:/usr/share/jenkins# ls
+    jenkins.war  jenkins.war.2.60.3.bak  other-version  ref
+    root@4e3e91f7c0d0:/usr/share/jenkins# cd other-version/
+    root@4e3e91f7c0d0:/usr/share/jenkins/other-version# ls
+    // wget下载新war包
+    root@4e3e91f7c0d0:/usr/share/jenkins/other-version# wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+    4. 删除原war包，使用新的替换即可
+    root@4e3e91f7c0d0:/usr/share/jenkins/other-version# cd /usr/share/jenkins
+    root@4e3e91f7c0d0:/usr/share/jenkins# rm jenkins.war
+    root@4e3e91f7c0d0:/usr/share/jenkins# cd other-version
+    root@4e3e91f7c0d0:/usr/share/jenkins/other-version# mv jenkins.war ../
+    5. 退出容器，重启容器
+    sudo docker restart jenkins
+
+-----------------------------------------------

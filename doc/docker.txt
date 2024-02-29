@@ -1,0 +1,53 @@
+//============================docker============================================================
+
+docker run --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+
+docker run -itd --name redis-test -p 6379:6379 redis --requirepass 123456
+
+
+容器镜像服务
+创建个人镜像仓库
+创建一个命名空间（一般是项目名）
+
+Centos8 安装 docker
+Docker  pull  镜像地址
+设置环境变量
+端口映射参数是-p    环境变量是-e        -d保证容器能够持续运行。
+
+给docker    添加镜像。用阿里的镜像
+
+
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+   "registry-mirrors": ["https://i6uvdcin.mirror.aliyuncs.com"]
+}
+ EOF
+
+
+ docker exec -it jenkins  bash    //进入容器
+
+ exit   //退出容器
+
+
+部署方式：
+	1. docker：
+		1. go程序编译程二进制文件，然后，然后在，
+		2.复制到docker基础镜像
+		3.构建一个新的镜像
+		4.将构建好的镜像上传到镜像仓库
+	2.将二进制文件拷贝到远程服务器上
+		1. 编译go程序，ps：如果你的开发环境是mac，而远程服务器的操作系统是linux，那么你在编译程序的时候，要编译程linux
+		2. 使用scp命令将二进制文件发送到远程服务器上
+		3. 运行二进制文件
+	3.直接在服务器上拉去代码并运行
+		1. 假如代码在git仓库里，直接用git clone命令将代码拉去到远程服务器上
+		2. 直接编译并运行
+		缺点：源代码暴露在服务器上，一旦服务器被黑客攻击，代码就被泄漏了
+
+
+
+
+
+//==============docker-compuse配置====================================
+
+

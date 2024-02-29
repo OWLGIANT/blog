@@ -1,0 +1,61 @@
+--------------tar压缩-解压--------------------------------------------
+
+tar -cvf anaconda-ks.cfg.tar anaconda-ks.cfg(#把anacondehks.cfg打包为 anacondehks.cfg.tar文件)
+
+tar -xvf anaconda-ks.cfg. tar    （使用 "-xvf" 选项，则会把包中的文件解压到当前目录下）
+
+
+tar -xvf test.tar -C /tmp        （把文件包test.tar解打包到/tmp/目录下）
+
+
+
+#!/bin/bash
+# 遍历目录中的文件根据target_directory  目录文件已有的删除当前文件夹匹配文件
+target_directory="CompressFiles"
+
+echo "删除开始"
+
+for file in "$target_directory"/*; do
+
+    if [ -f "$file" ]; then
+
+      filename=$(basename "$file")
+      patternFile="${filename%.gz}"
+      echo    "$patternFile"
+      rm  -f  "$patternFile"*
+
+    fi
+done
+
+
+echo "删除结束"
+
+//==============================================================================================
+
+# 配置目标文件夹
+folder_path="CompressFiles"
+
+if [ -d "$folder_path" ]; then
+  echo "文件夹已经存在"
+else
+  mkdir -p "$folder_path"
+  echo "文件夹已创建"
+fi
+
+echo "移动开始"
+
+today_start=$(date -d "$(date +"%Y-%m-%d")" +%s)
+
+for file in *.csv.gz; do
+
+  mtime=$(stat -c %Y "$file")
+
+  if [ "$mtime" -ge "$today_start" ]; then
+        echo "文件在今天更新过 $today_start  $mtime"
+  else
+        echo "文件是之前更新的  $today_start  $mtime"
+        mv "$file"  "$folder_path"/"$file"
+  fi
+done
+
+echo "移动完成"

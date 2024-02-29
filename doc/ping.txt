@@ -1,0 +1,10 @@
+--------------------ping---------------
+
+Ping      IP
+
+bytes值：数据包大小，也就是字节。
+
+time值：响应时间，这个时间越小，说明你连接这个地址速度越快。
+
+TTL值：Time To Live,表示DNS记录在DNS服务器上存在的时间，它是IP协议包的一个值，告诉路由器该数据包何时需要被丢弃。通过Ping返回的TTL值大小，粗略地判断目标系统类型是Windows系列还是UNIX/Linux系列。Linux系统的TTL值为64或255，WindowsNT/2000/XP系统的TTL值为128，Windows98系统的TTL值为32，UNIX主机的TTL值为255。
+
