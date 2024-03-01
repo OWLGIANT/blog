@@ -6,6 +6,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"os"
 	"runtime"
+	"runtime/pprof"
 	"time"
 )
 
@@ -22,15 +23,14 @@ func StartMemoryProfiling(pid int) {
 	for {
 		select {
 		case <-ticker.C:
-			//memProfile, err := os.Create(fmt.Sprintf("WatchMem%v.pprof", pid))
-			//if err != nil {
-			//	log.Error("Error creating memory profile: ", err)
-			//	return
-			//}
-			//// 收集内存分析信息
-			//pprof.WriteHeapProfile(memProfile)
-			//memProfile.Close()
-			//
+			memProfile, err := os.Create(fmt.Sprintf("WatchMem%v.pprof", pid))
+			if err != nil {
+				logrus.Error("Error creating memory profile: ", err)
+				return
+			}
+			// 收集内存分析信息
+			pprof.WriteHeapProfile(memProfile)
+			memProfile.Close()
 
 			MemStatsProfile, err := os.Create(fmt.Sprintf("WatchMemStats%v.txt", pid))
 			if err != nil {
@@ -55,5 +55,12 @@ func StartMemoryProfiling(pid int) {
 			writer.Flush()
 			MemStatsProfile.Close()
 		}
+	}
+}
+
+func MeMLeak() {
+	resultString := ""
+	for {
+		resultString = resultString + "======================天上天下 , 唯朕独尊======================"
 	}
 }
