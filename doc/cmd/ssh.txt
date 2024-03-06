@@ -23,3 +23,6 @@ scp -r root@114.55.134.26:/root/supervisor  /home/supervisor
 
 修改ssh  密码命令
 passwd
+
+
+scp -r -i C:\Users\Administrator\Desktop\dev_server.pem C:\Users\Administrator\Desktop\py ubuntu@35.75.62.181:/home/ubuntu/wutianxing
