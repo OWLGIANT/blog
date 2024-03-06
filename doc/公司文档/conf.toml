@@ -1,0 +1,53 @@
+[server]
+addr = ":8889"
+
+[database]
+user = "qqlh_rich"
+pwd  = "wcLmFVAhcrDNrXf^"
+host = "127.0.0.1"
+port = "3306"
+dbName = "beast_admin"
+
+[redis]
+server = "127.0.0.1:6379"
+pwd = ""
+db = 0
+poolSize = 100
+
+[jwt]
+secret = "secret"
+
+[beastman]
+username = "qqlh"
+password = "richrich"
+server = "http://auth.thousandquant.com:8010/login"
+
+[email]
+username = "qqlh.mailer@gmail.com"
+password = "wqxflytgrqbqzrmj"
+host = "smtp.gmail.com"
+port = 587
+
+[influxDB]
+server = "http://127.0.0.1:8086"
+token = "a2niUYSEEPE8-um8gr4aiueK4Y-JdHWNdsdPWUAmRyV1euqZw9dK1VqxIwtOsQWOQEjgm2CB8GqcFhPVtOtquA=="
+org = "qqlh"
+infoBucket = "beast_info"
+priceBucket = "beast_price"
+equityBucket = "beast_equity"
+equityBucketNew = "beast_equity_new"
+yieldBucket = "beast_yield"
+pairProfitBucket = "beast_pair_profit"
+eagleBucket = "beast_eagle"
+ghostBucket = "beast_ghost"
+watchBucket = "beast_watch"
+operationBucket = "beast_operation"
+acctEquityBucket = "beast_acct_equity"
+robotDetailBucket = "beast_robot_detail"
+
+[account]
+watchStraAcctId = 4
+
+[common]
+title = "千千量化"
+appName = "sand.thousandquant.com"

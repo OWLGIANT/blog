@@ -54,7 +54,7 @@ for file in *.csv.gz; do
         echo "文件在今天更新过 $today_start  $mtime"
   else
         echo "文件是之前更新的  $today_start  $mtime"
-        mv "$file"  "$folder_path"/"$file"
+     :wq::w
   fi
 done
 

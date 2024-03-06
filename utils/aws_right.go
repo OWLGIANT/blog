@@ -34,6 +34,7 @@ func PermissionAdd(ipList []string) {
 		logrus.Error("ip 不能为空")
 		return
 	}
+	fmt.Println("=========ipList==========", len(ipList))
 	for i := 0; i < len(ipList); i++ {
 		status := auth(ipList[i])
 		status2 := auth2(ipList[i])
