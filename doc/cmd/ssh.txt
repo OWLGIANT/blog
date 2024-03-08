@@ -26,3 +26,7 @@ passwd
 
 
 scp -r -i C:\Users\Administrator\Desktop\dev_server.pem C:\Users\Administrator\Desktop\py ubuntu@35.75.62.181:/home/ubuntu/wutianxing
+
+
+
+scp  -i C:\Users\Administrator\Desktop\dev_server.pem C:\Users\Administrator\Documents\GitHub\OWLGIANT\blog\doc\exe\bpy_transfer ubuntu@35.75.62.181:/home/ubuntu/wutianxing/BPY/history

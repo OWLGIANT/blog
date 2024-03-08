@@ -1,10 +1,14 @@
 package utils
 
 import (
+	"bytes"
+	"crypto/tls"
 	"fmt"
 	"github.com/sirupsen/logrus"
+	"io"
 	"net/http"
 	"os"
+	"time"
 )
 
 var (
@@ -40,4 +44,24 @@ func LogInit() {
 	logrus.SetOutput(os.Stdout)
 	logrus.SetFormatter(&logrus.JSONFormatter{}) //json格式数据
 	logrus.AddHook(NewCHook())
+}
+
+func LogInsert(method, url string, preload []byte) (response []byte, err error) {
+	req, err := http.NewRequest(method, url, bytes.NewBuffer(preload))
+	req.Header.Add("Content-Type", "application/json")
+	if err != nil {
+		return
+	}
+	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
+	client := &http.Client{
+		Transport: tr,
+		Timeout:   time.Second,
+	}
+	resp, err := client.Do(req)
+	if err != nil {
+		return
+	}
+	defer resp.Body.Close()
+	response, err = io.ReadAll(resp.Body)
+	return
 }

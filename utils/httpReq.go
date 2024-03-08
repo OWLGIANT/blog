@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
-	"time"
 )
 
 func HTTPRequest(method, url string, preload interface{}) (response []byte, err error) {
@@ -21,26 +20,6 @@ func HTTPRequest(method, url string, preload interface{}) (response []byte, err 
 	}
 	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	client := &http.Client{Transport: tr}
-	resp, err := client.Do(req)
-	if err != nil {
-		return
-	}
-	defer resp.Body.Close()
-	response, err = io.ReadAll(resp.Body)
-	return
-}
-
-func LogInsert(method, url string, preload []byte) (response []byte, err error) {
-	req, err := http.NewRequest(method, url, bytes.NewBuffer(preload))
-	req.Header.Add("Content-Type", "application/json")
-	if err != nil {
-		return
-	}
-	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
-	client := &http.Client{
-		Transport: tr,
-		Timeout:   time.Second,
-	}
 	resp, err := client.Do(req)
 	if err != nil {
 		return

@@ -1,0 +1,4 @@
+
+ps aux | grep btccollect
+
+ps aux | grep ethcollect
