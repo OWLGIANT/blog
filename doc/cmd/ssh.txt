@@ -30,3 +30,11 @@ scp -r -i C:\Users\Administrator\Desktop\dev_server.pem C:\Users\Administrator\D
 
 
 scp  -i C:\Users\Administrator\Desktop\dev_server.pem C:\Users\Administrator\Documents\GitHub\OWLGIANT\blog\doc\exe\bpy_transfer ubuntu@35.75.62.181:/home/ubuntu/wutianxing/BPY/history
+
+
+
+
+scp -r -p 11390 /root/tempData/supervisor tianxing@host.ap.cpolar.io:/home/supervisor
+
+ssh -p 11390  tianxing@host.ap.cpolar.io
+
