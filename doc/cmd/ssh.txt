@@ -15,7 +15,6 @@ scp -r root@114.55.134.26:/root/supervisor  C:\Users\Administrator\Documents\Git
 从本地计算机传输文件夹到远程服务器：
 scp -r /root/supervisor root@114.55.134.26:/root/supervisor
 
-
 scp -r /root/supervisor root@141.164.56.89:/root/tempData
 
 scp -r root@114.55.134.26:/root/supervisor  /home/supervisor

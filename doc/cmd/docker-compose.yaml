@@ -1,0 +1,118 @@
+version: "3"
+
+services:
+  db:
+
+    restart: always
+
+    container_name: jogorio-mysql
+
+    image: mysql:8.0.30
+
+    environment:
+
+      MYSQL_ROOT_PASSWORD: crm@8888
+
+    ports:
+
+      - 3306:3306
+
+    volumes:
+
+      - /root/jogorio/data:/var/lib/mysql
+
+
+
+  redis:
+
+    image: 'redis:6.0'
+
+    restart: always
+
+    container_name: jogorio-redis
+
+    volumes:
+
+      - /root/jogorio/data/redis:/data
+
+    ports:
+
+      - '6379:6379’
+
+
+
+  jenkins:
+
+    image: jenkins/jenkins
+
+    container_name: jenkins
+
+    ports:
+
+      - 8080:8080
+
+      - 50000:50000
+
+    volumes:
+
+      - ./data/:/var/jenkins_home/
+
+
+
+
+  es22:
+    image: elasticsearch:7.8.0
+    container_name: es22
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - es-conf:/usr/share/elasticsearch/config
+      - es-data:/usr/share/elasticsearch/data
+      - es-plugins:/usr/share/elasticsearch/plugins
+    environment:                              # 设置环境变量,相当于docker run命令中的-e
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+      ELASTIC_PASSWORD: "123456" # elastic账号密码
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    #    networks:
+    #      - es-net
+
+    kb22:
+      image: kibana:7.8.0
+      container_name: kb22
+      network_mode: host
+      restart: unless-stopped
+      environment:
+        - ELASTICSEARCH_HOSTS=http://localhost:9200
+        - ELASTICSEARCH_USERNAME=elastic
+        - ELASTICSEARCH_PASSWORD="123456"
+      ports:
+        - "5601:5601"
+      depends_on:
+        - es22
+    #    links:
+    #      - es22
+    #    networks:
+    #      - es-net
+
+    logrus:
+      restart: always
+      image: registry.cn-hangzhou.aliyuncs.com/wtx2/logrus:latest
+      container_name: logrus
+      network_mode: host
+      ports:
+        - "8080:8080"
+      depends_on:
+        - es22
+
+volumes:
+  es-conf:
+  es-data:
+  es-plugins:
+#networks:
+#  es-net:
+#    driver: bridge

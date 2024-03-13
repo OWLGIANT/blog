@@ -4,6 +4,14 @@ docker run --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
 
 docker run -itd --name redis-test -p 6379:6379 redis --requirepass 123456
 
+docker volume inspect ls-cnf      //查看挂载磁盘地址
+
+docker exec -it etcd sh
+
+docker run -itd --name redis-test -p 6379:6379 redis --requirepass 123456
+
+docker run -itd --name mysql3   -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 mysql
+
 
 容器镜像服务
 创建个人镜像仓库
@@ -44,10 +52,5 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 		2. 直接编译并运行
 		缺点：源代码暴露在服务器上，一旦服务器被黑客攻击，代码就被泄漏了
 
-
-
-
-
-//==============docker-compuse配置====================================
 
 
