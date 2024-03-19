@@ -320,7 +320,7 @@ ping、dig、tcping、nslookup、mtr、curl、openssl
 
 
 
-
+ps aux |grep  stra 任务数量
 
 
 
