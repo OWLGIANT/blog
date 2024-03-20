@@ -9,3 +9,7 @@ SHOW INDEX FROM alert;
 
 
 select * from customer;
+
+UPDATE account SET status = 2 WHERE plat_form='coinex_usdt_swap';
+
+source /root/update.sql;

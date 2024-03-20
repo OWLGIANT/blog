@@ -3,8 +3,8 @@ module blog
 go 1.21.5
 
 require (
-	github.com/deckarep/golang-set/v2 v2.6.0
 	github.com/pkg/sftp v1.13.6
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/crypto v0.18.0
 )

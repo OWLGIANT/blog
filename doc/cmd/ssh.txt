@@ -37,3 +37,10 @@ scp -r -p 11390 /root/tempData/supervisor tianxing@host.ap.cpolar.io:/home/super
 
 ssh -p 11390  tianxing@host.ap.cpolar.io
 
+
+
+//-------------------------------------------------------------------
+scp  /root/supervisor/watch/binance_usdt_swap-okx_usdt_swap-bybit_usdt_swap@btc_usdt-btc_usdt-btc_usdt@JP@1710906347.csv  root@141.164.56.89:/root/tempData/watch
+scp -r root@141.164.56.89:/root/tempData/watch  C:\Users\Administrator\Documents\GitHub\OWLGIANT\blog
+
+scp  C:\Users\Administrator\Documents\GitHub\OWLGIANT\blog\update.sql  root@35.76.87.214:/root/tempDate
