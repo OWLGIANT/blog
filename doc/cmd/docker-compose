@@ -12,3 +12,6 @@ docker-compose up -d
 docker-compose restart
 
 docker logs logrusre
+
+
+ docker volume inspect logrus_kb-conf

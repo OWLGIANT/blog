@@ -1,0 +1,41 @@
+[server]
+port = ":9999"
+
+[database]
+user = "root"
+pwd  = "123456"
+host = "127.0.0.1"
+port = "3306"
+dbName = "rich_admin"
+
+[redis]
+server = "127.0.0.1:6379"
+pwd = "123456"
+db = 12
+poolSize = 100
+
+[jwt]
+secret = "secret"
+
+
+[email]
+username = "qqlh.mailer@gmail.com"
+password = "wqxflytgrqbqzrmj"
+host = "smtp.gmail.com"
+port = 587
+
+[influxDB]
+server = "http://127.0.0.1:8086"
+token = "dM0elNvefsUYcj2b8u-0GS296j9Aa1kF1vM7tw77OySZtiYUHcylRKNcHLvRsXnHtSYMM9TpKynCO3TGcwcpwg=="
+org = "qqlh"
+infoBucket = "beast_info"
+priceBucket = "beast_price"
+pairProfitBucket = "beast_pair_profit"
+eagleBucket = "beast_eagle"
+ghostBucket = "beast_ghost"
+watchBucket = "beast_watch"
+operationBucket = "beast_operation"
+acctEquityBucket = "beast_acct_equity"
+
+[common]
+appName = "rich_server_yyds"

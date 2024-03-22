@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOML Editor</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .editor {
+            width: 70%;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+        }
+
+        #output {
+            white-space: pre-wrap;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>TOML Editor</h1>
+<div class="container">
+    <div class="sidebar">
+        <h2>Text List</h2>
+        <ul id="textList">
+            <li onclick="loadText('Text 1')">Text 1</li>
+            <li onclick="loadText('Text 2')">Text 2</li>
+            <li onclick="loadText('Text 3')">Text 3</li>
+        </ul>
+    </div>
+    <div class="editor">
+        <textarea id="input" placeholder="Enter TOML text here"></textarea>
+        <button onclick="parseTOML()">Parse TOML</button>
+        <div id="output"></div>
+    </div>
+</div>
+
+<script>
+    function loadText(text) {
+        document.getElementById('input').value = text;
+    }
+
+    function parseTOML() {
+        const inputText = document.getElementById('input').value;
+        const outputElement = document.getElementById('output');
+
+        try {
+            const tomlObject = TOML.parse(inputText);
+            const prettyToml = TOML.stringify(tomlObject);
+            outputElement.textContent = prettyToml;
+        } catch (error) {
+            outputElement.textContent = "Invalid TOML format. Please check your input.";
+        }
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toml/3.0.0/toml.min.js"></script>
+</body>
+</html>

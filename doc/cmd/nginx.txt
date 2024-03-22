@@ -1,0 +1,8 @@
+  vim /etc/nginx/nginx.conf
+  nginx -t
+  nginx -s reload
+
+                  location /etcd {
+                          proxy_pass http://127.0.0.1:2379;
+                          proxy_read_timeout 300;
+                  }

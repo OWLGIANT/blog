@@ -1,7 +1,8 @@
 -- 删除外键
 ALTER TABLE alert DROP FOREIGN KEY `fk_alert_robot`;
 SHOW INDEX FROM alert;
-
+SHOW INDEX FROM account;
+DROP INDEX sub_account ON account;
 
 -- 大后台
 -- mysql -u qqlh_rich -p
